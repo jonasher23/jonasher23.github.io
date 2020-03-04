@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lab 4</title>
-    <link src="./style.css" type="text/stylesheet" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
     <div>
@@ -14,7 +14,30 @@
     <div class="content">
         hello world
     </div>
+    
     <script>
+        let myName = 'Jonathan Asher';
+        
+        var element1 = document.querySelector(".content");
+        var element2 = document.querySelector(".content")
+        var para1 = document.createElement("P"); 
+        var para2 = document.createElement("P");  
+        para1.className = "one";     
+        para2.className = "two";            
+        element1.appendChild(para1); 
+        element2.appendChild(para2);
+       
+        para1.innerText = "my name has " + myName.substr(0,8).length + " characters";
+        para2.innerText = "the third character in my name is " + myName[2].toUpperCase() + "\n" + myName.substr(11);
+
+        let firstName = myName.substr(0,8);
+        let lastName = myName.substr(9);
+
+        let nameLength = firstName.length + lastName.length;
+        
+        const myHeading = document.querySelector('.header');
+        myHeading.textContent = myName.substr(0,8) + '\'s Lab 4 ' + nameLength;
     </script>
+
 </body>
 </html>
