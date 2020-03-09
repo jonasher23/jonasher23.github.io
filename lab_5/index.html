@@ -10,7 +10,7 @@
   <div class="container">
     <div class="wrapper">
       <div class="header">Test JSON page</div>
-      <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
+      <button class="button" onclick="loadData()">Load Some JSON</button>
       <button class="activate">Click me to replace list
         entries</button>
       <div class="content">
@@ -265,6 +265,32 @@
       { "name": "Zambia", "code": "ZM" },
       { "name": "Zimbabwe", "code": "ZW" }
     ]
+
+    // Lab 1
+    document.querySelector(".header").innerHTML = "Jon's List of Countries";
+    
+    // Lab 2/3
+    var orderedList = document.createElement("ol");
+    orderedList.className("countries");
+    document.querySelector(".content").appendChild(orderedList);
+
+    // Lab 5
+    function loadData() {
+      var newList = randCountries();
+    }
+    
+    function randCountries() {
+      var items = countries;
+      var newItems = [];
+
+      for (var i = 0; i < 25; i++) {
+        var idx = Math.floor(Math.random() * items.length);
+        newItems.push(items[idx]);
+        items.splice(idx, 1);
+      }
+      return newItems;
+    }
+
     console.log("List of countries in the world", countries);
   </script>
 </body>
