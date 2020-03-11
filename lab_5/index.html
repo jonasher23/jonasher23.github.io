@@ -10,8 +10,8 @@
   <div class="container">
     <div class="wrapper">
       <div class="header">Test JSON page</div>
-      <button class="button" onclick="loadData()">Load Some JSON</button>
-      <button class="activate">Click me to replace list
+      <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
+      <button class="activate" onclick="loadData()">Click me to replace list
         entries</button>
       <div class="content">
       </div>
@@ -265,33 +265,39 @@
       { "name": "Zambia", "code": "ZM" },
       { "name": "Zimbabwe", "code": "ZW" }
     ]
-
+   
     // Lab 1
     document.querySelector(".header").innerHTML = "Jon's List of Countries";
     
-    // Lab 2/3
-    var orderedList = document.createElement("ol");
-    orderedList.className("countries");
-    document.querySelector(".content").appendChild(orderedList);
-
-    // Lab 5
+    // Lab 2
+    var ol = document.createElement("ol");
     function loadData() {
-      var newList = randCountries();
-    }
-    
-    function randCountries() {
-      var items = countries;
-      var newItems = [];
+      ol.innerHTML = '';
+      
 
-      for (var i = 0; i < 25; i++) {
-        var idx = Math.floor(Math.random() * items.length);
-        newItems.push(items[idx]);
-        items.splice(idx, 1);
+      function random(num) {
+        return Math.floor(num * Math.random());
       }
-      return newItems;
-    }
+     
+      var i = 0;
+      while (i < 25) {
+        var li = document.createElement("li");
+        rando = random(218);
+        li.innerHTML = "<b>" + countries[rando].code + "</b>" + " " + countries[rando].name;
+        ol.appendChild(li);
+        i++;
+      }
+      
+      ol.className = "countries";
+      document.querySelector(".content").appendChild(ol);
 
-    console.log("List of countries in the world", countries);
+      console.log("List of countries in the world", countries);
+    }
+    // Lab 3
+   
+  
+    
+
   </script>
 </body>
 
