@@ -4,7 +4,8 @@ const thumbBar = document.querySelector('.thumb-bar');
 const btn = document.querySelector('button');
 const overlay = document.querySelector('.overlay');
 
-/* Looping through images */
+/* Looping through images 
+Answers from MDN */
 
 for (let i = 1; i <= 5; i++) {
     const newImage = document.createElement('img');
@@ -16,7 +17,9 @@ for (let i = 1; i <= 5; i++) {
 }
 
 
-/* Wiring up the Darken/Lighten button */
+/* Wiring up the Darken/Lighten button 
+Answers from MDN */
+
 btn.onclick = function() {
     const btnClass = btn.getAttribute('class');
     if(btnClass === 'dark') {
